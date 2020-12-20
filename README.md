@@ -12,8 +12,8 @@ any arrry-like object in the future.
 
 
 ### Tips
-1. This is a package for practice packaging in python. So there may be problems
-with the algorithm.
+1. This is actually a package for practice packaging in python. So there may be problems
+with the algorithm and the algorithm may not be efficient.
 2. There should be at least 2 non-nan value in the input, otherwise the original 
 DataFrame will be returned.
 3. Only float point number is tested, so be careful if use this function with other
