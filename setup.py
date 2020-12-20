@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="myimpute",
-    version="0.1.0",
+    version="0.1.1",
     author="Shaobo Zhuang",
     license="MIT",
     author_email="dcbajk@vip.qq.com",

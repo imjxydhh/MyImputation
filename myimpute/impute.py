@@ -35,11 +35,9 @@ def linear_impute(df):
         #         then, a4 = a3 + (a3 - a2), a5 = a3 + 2(a3 - a2),
         #               a1 = a2 + (a2 - a3), a0 = a2 + 2(a2 - a3)
         for k in reversed(range(first_non_nan)):
-            df.iloc[k, j] = init_backward + (first_non_nan - k) * diff_backward if init_backward + (
-                    first_non_nan - k) * diff_backward > 0 else 0
+            df.iloc[k, j] = init_backward + (first_non_nan - k) * diff_backward
         for k in range(last_non_nan + 1, length_row):
-            df.iloc[k, j] = init_forward + (k - last_non_nan) * diff_forward if init_forward + (
-                    k - last_non_nan) * diff_forward else 0
+            df.iloc[k, j] = init_forward + (k - last_non_nan) * diff_forward
 
     # resume the index of the slice of the data so that it can be put into the original dataframe
     df = df.set_index([index])
@@ -53,7 +51,8 @@ if __name__ == '__main__':
 
     a = pd.DataFrame({'A': [np.nan, np.nan, 5, 8, 4], 'B': [3, np.nan, np.nan, 10, 11], 'C': [3, 5, 9, np.nan, np.nan],
                       'D': [1, np.nan, 3, np.nan, 5], 'E': [np.nan, np.nan, np.nan, np.nan, np.nan],
-                      'F': [np.nan, np.nan, np.nan, 3, np.nan], 'G': [1, np.nan, np.nan, np.nan, 5]})
+                      'F': [np.nan, np.nan, np.nan, 3, np.nan], 'G': [1, np.nan, np.nan, np.nan, 5],
+                      'H': [np.nan, 0.5, 4, 5, 2]})
     print(a)
     b = linear_impute(a)
     print(b)
