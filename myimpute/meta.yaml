@@ -1,0 +1,17 @@
+package:
+  name: myalgorithm
+  version: "0.1"
+
+build:
+  number: 1
+
+requirements:
+  run:
+    - python
+
+test:
+  imports:
+    - myimpute.myimpute
+
+about:
+  summary: This is a package for practice
